@@ -33,10 +33,40 @@ print(fact_res)
 #
 # check_even_odd1(4,21)
 
+#formal vs actual parameters on string, int, float, tuple -- immutable objects
 def check_even(num : int) -> bool:
     if num % 2 == 0:
+        num += 2
+        print(id(num))
         return True
     else:
         return False
 
-print(check_even(13))
+number_one = 14
+print(id(number_one))
+print(check_even(number_one))
+
+#formal vs actual parameters -- mutable objects -- list, dictionary
+def change_case(l1 : list):
+    for each_item in l1:
+        print(id(l1))
+        print(each_item.upper())
+
+list_1 = ["Pooja","Pranita","dhanashri","vishal","roshni"]
+print(id(list_1))
+change_case(list_1)
+print(list_1)
+
+def change_case_1(l1 : list):
+    for i in range(0,len(l1)):
+        l1[i] = l1[i].upper()
+        print(id(l1))
+
+list_2 = ["Pooja","Pranita","dhanashri","vishal","roshni"]
+print(id(list_2))
+change_case_1(list_2)
+print(id(list_2))
+print(list_2)
+
+list_2.append("Rutuja")
+print(list_2)

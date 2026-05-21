@@ -34,7 +34,7 @@ def some_fun_1():
 some_fun_1()
 
 #3. passing function as an argument
-def maths_operation(val1, val2,op):
+def maths_operation(val1,val2,op):
     return op(val1, val2)
 
 def add_1(n1, n2):
@@ -46,7 +46,9 @@ def subtract_1(n1, n2):
 def multiply_1(n1, n2):
     return n1 * n2
 
-var_add = maths_operation(10,10,add_1)
+x = 100
+y = 25
+var_add = maths_operation(x,y,add_1)
 var_sub = maths_operation(13,78,subtract_1)
 var_mul = maths_operation(10,5,multiply_1)
 print(var_add)
